@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "cooku-internal",
+  "description": "Plugins internos de Cooku (OrdersHub) para el equipo del producto",
+  "owner": {
+    "name": "Cooku",
+    "email": "victorgestaltung@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "customer-release-notes",
+      "description": "Convierte los commits de un periodo en notas de versión para clientes: correo, WhatsApp, redes y aviso in-app, en lenguaje no técnico, con dónde encontrar cada cambio y un brief del material visual que hay que grabar.",
+      "category": "productivity",
+      "source": "./plugins/customer-release-notes"
+    }
+  ]
+}
