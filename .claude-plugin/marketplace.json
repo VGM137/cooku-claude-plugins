@@ -1,17 +1,23 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "cooku-internal",
-  "description": "Plugins internos de Cooku (OrdersHub) para el equipo del producto",
+  "name": "cooku",
+  "description": "Conectores oficiales de Cooku (usecooku.com) para Claude: pedidos y reservas para comensales, y analítica para restaurantes.",
   "owner": {
     "name": "Cooku",
-    "email": "victorgestaltung@gmail.com"
+    "email": "hola@usecooku.com"
   },
   "plugins": [
     {
-      "name": "customer-release-notes",
-      "description": "Convierte los commits de un periodo en notas de versión para clientes: correo, WhatsApp, redes y aviso in-app, en lenguaje no técnico, con dónde encontrar cada cambio y un brief del material visual que hay que grabar.",
+      "name": "cooku-commerce",
+      "description": "Busca restaurantes de Cooku, mira su menú, cotiza y haz pedidos o reserva mesa desde Claude.",
       "category": "productivity",
-      "source": "./plugins/customer-release-notes"
+      "source": "./plugins/cooku-commerce"
+    },
+    {
+      "name": "cooku-restaurants",
+      "description": "Pregúntale a Claude por las ventas, márgenes, cierres de caja, inventario y reservas de tu restaurante en Cooku. Solo lectura.",
+      "category": "productivity",
+      "source": "./plugins/cooku-restaurants"
     }
   ]
 }

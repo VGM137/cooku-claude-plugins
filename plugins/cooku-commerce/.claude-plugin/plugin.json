@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "cooku-commerce",
+  "description": "Pedidos y reservas en restaurantes de Cooku: buscar restaurantes, ver el menú, cotizar, pedir y reservar mesa. Te identificas con un código que llega a tu correo, y Claude te enseña el total y te pide confirmación antes de cada pedido.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cooku",
+    "email": "hola@usecooku.com",
+    "url": "https://usecooku.com"
+  },
+  "homepage": "https://usecooku.com",
+  "keywords": ["cooku", "restaurantes", "pedidos", "reservas", "menu", "mcp"]
+}

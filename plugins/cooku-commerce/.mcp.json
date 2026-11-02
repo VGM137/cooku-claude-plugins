@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cooku-commerce": {
+      "type": "http",
+      "url": "https://api.usecooku.com/mcp/commerce"
+    }
+  }
+}

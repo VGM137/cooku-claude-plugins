@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cooku-restaurants": {
+      "type": "http",
+      "url": "https://api.usecooku.com/mcp/restaurant"
+    }
+  }
+}
