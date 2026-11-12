@@ -2,7 +2,8 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "cooku-restaurants",
   "description": "Analítica de tu restaurante en Cooku, de solo lectura: ventas, productos más vendidos, márgenes, comparativas entre periodos, cierres de caja, alertas de inventario y ocupación de reservas.",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "license": "MIT",
   "author": {
     "name": "Cooku",
     "email": "hola@usecooku.com",

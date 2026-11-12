@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "cooku",
-  "description": "Conectores oficiales de Cooku (usecooku.com) para Claude: pedidos y reservas para comensales, y analítica para restaurantes.",
+  "description": "Conectores de Cooku (usecooku.com) para Claude: pedidos y reservas para comensales, y analítica para restaurantes.",
   "owner": {
     "name": "Cooku",
     "email": "hola@usecooku.com"

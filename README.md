@@ -1,8 +1,9 @@
 # Cooku para Claude
 
-Conectores oficiales de [Cooku](https://usecooku.com) empaquetados como plugins de
+Los conectores de [Cooku](https://usecooku.com) empaquetados como plugins de
 Claude. Instalarlos conecta el servidor MCP de Cooku ya configurado: nadie tiene
-que copiar una URL.
+que copiar una URL. Cada plugin trae además una skill que le enseña a Claude a
+usar sus herramientas. Cada carpeta de `plugins/` tiene su propio README.
 
 | Plugin | Para quién | Servidor MCP | Acceso |
 |---|---|---|---|
