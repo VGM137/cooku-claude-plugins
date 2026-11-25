@@ -2,7 +2,8 @@
 
 Pide comida y reserva mesa en restaurantes que usan [Cooku](https://usecooku.com)
 sin salir de Claude: buscar restaurantes, ver el menú, cotizar, hacer el pedido
-(para recoger o a domicilio), seguir su estado y reservar mesa.
+(para recoger, a domicilio o a tu mesa cuando estás en el local), seguir su
+estado y reservar mesa.
 
 ## Qué incluye
 
@@ -26,6 +27,15 @@ y no guarda claves: solo declara la URL del servidor y la skill.
 | `get_order_status` | Estado del pedido y del pago | No |
 | `check_availability` | Horas libres para reservar una fecha y número de personas | No |
 | `reserve_table` | Pide una reserva; queda pendiente hasta que el restaurante confirma | Sí |
+| `find_destination` | Comprueba la mesa o el lugar del local donde estás (habitación, coworking, área común) por el código impreso bajo el QR o el enlace del QR | No |
+| `link_destination` | Enlace de 15 minutos para escanear el QR de tu mesa con el teléfono | Sí |
+| `forget_destination` | Olvida el lugar que escaneaste cuando ya no estás ahí | Sí |
+
+**Pedir a la mesa.** Solo en restaurantes que lo activan. Claude te pide el
+código de 8 caracteres impreso bajo el QR de tu mesa (o te da un enlace para
+escanearlo) y, si el lugar lo exige, el PIN de 6 dígitos que tiene el local.
+Antes de pedir confirma contigo el lugar junto con el total. Ni el código ni el
+PIN salen de Cooku.
 
 ## Conectar
 
@@ -39,8 +49,9 @@ y no guarda claves: solo declara la URL del servidor y la skill.
 ## Qué datos se envían y a dónde
 
 Todo va solo a `api.usecooku.com`: lo que busques, los platos que elijas, la
-dirección de entrega si pides a domicilio, las notas para la cocina y los datos
-de contacto que diste al conectar. Cooku los comparte con el restaurante al que
+dirección de entrega si pides a domicilio, el código y el PIN de la mesa si
+pides en el local, las notas para la cocina y los datos de contacto que diste al
+conectar. Cooku los comparte con el restaurante al que
 le pides o reservas, para que pueda atenderte. El pago en línea, cuando el
 restaurante lo exige, se hace en la página de pago de Cooku en tu navegador:
 Claude nunca ve ni recibe datos de tarjeta.
@@ -56,8 +67,9 @@ Claude nunca ve ni recibe datos de tarjeta.
 
 ## In English
 
-Order food (pickup or delivery) and book tables at restaurants that run on
-Cooku. The plugin adds the remote MCP server `https://api.usecooku.com/mcp/commerce`
+Order food (pickup, delivery, or to your table when you are at the restaurant,
+using the code printed under the table's QR and, if required, a 6-digit PIN)
+and book tables at restaurants that run on Cooku. The plugin adds the remote MCP server `https://api.usecooku.com/mcp/commerce`
 (OAuth with an email code) and one skill that makes Claude quote first, show the
 total and wait for the user's explicit confirmation before `create_order` or
 `reserve_table`. It runs nothing locally; data goes only to Cooku and to the

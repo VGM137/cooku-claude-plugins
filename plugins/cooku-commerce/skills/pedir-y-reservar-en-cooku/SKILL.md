@@ -1,6 +1,6 @@
 ---
 name: pedir-y-reservar-en-cooku
-description: Pedir comida (para recoger o a domicilio) o reservar mesa en un restaurante que usa Cooku, con el conector cooku-commerce. Úsala cuando la persona quiera buscar un restaurante, ver un menú, saber cuánto le saldría un pedido, pedir, seguir un pedido o reservar mesa, y el conector cooku-commerce esté conectado.
+description: Pedir comida (para recoger, a domicilio o a la mesa donde está la persona) o reservar mesa en un restaurante que usa Cooku, con el conector cooku-commerce. Úsala cuando la persona quiera buscar un restaurante, ver un menú, saber cuánto le saldría un pedido, pedir, pedir desde su mesa con el QR, seguir un pedido o reservar mesa, y el conector cooku-commerce esté conectado.
 ---
 
 # Pedir y reservar en Cooku
@@ -33,6 +33,27 @@ Responde siempre en el idioma de la persona.
    aceptes datos de tarjeta en el chat.
 8. **Seguimiento.** `get_order_status` cuando pregunte cómo va su pedido.
 
+## Pedido en el local (a la mesa o al lugar donde está)
+
+Solo si `get_menu` o `search_restaurants` dicen que el restaurante tiene
+`onSiteOrdering.tables` o `onSiteOrdering.resources`.
+
+1. **Lugar.** Pide el código de 8 caracteres impreso bajo el QR (si te manda una
+   foto de la tarjeta, lee ese código; no intentes decodificar el QR), acepta el
+   enlace que abre el QR, o dale `link_destination` para que lo escanee desde su
+   teléfono y, cuando diga que ya lo hizo, llama a `find_destination` sin
+   argumentos.
+2. **Comprobar.** `find_destination` dice qué mesa o lugar es, el tipo de pedido,
+   cómo se paga y si hace falta PIN. Si hace falta, pídeselo: está en el lugar o
+   se lo dan en recepción o caja.
+3. **Cotizar.** `quote_order` con `destination` (sin `storeSlug` ni
+   `orderType`: salen del lugar) y el PIN si lo pidió.
+4. **Confirmar y pedir.** Enseña el lugar junto con el desglose y el total, espera
+   su «sí» y sigue con `create_order` como en un pedido normal.
+5. **Pedido siguiente.** Cada pedido nuevo en el local vuelve a preguntar si sigue
+   en el mismo lugar (`destination.linked` + `stillThere: true` solo si lo acaba
+   de confirmar). Si ya no está ahí, `forget_destination`.
+
 ## Reserva
 
 1. `check_availability` con el `slug`, la fecha local del restaurante
@@ -51,3 +72,5 @@ Responde siempre en el idioma de la persona.
   agotado), dile el motivo con palabras normales y ofrece la alternativa que
   traiga el error. No reintentes a ciegas.
 - No uses jerga interna (`slug`, `quoteId`, `PICKUP`) en lo que escribes.
+- El código de la mesa y el PIN solo sirven para pedir en ese lugar: no los
+  repitas en otros mensajes ni los guardes en notas.
