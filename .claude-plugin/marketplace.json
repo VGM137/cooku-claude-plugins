@@ -6,6 +6,7 @@
     "name": "Cooku",
     "email": "hola@usecooku.com"
   },
+  "privacyPolicyUrl": "https://usecooku.com/pa/politica-de-privacidad",
   "plugins": [
     {
       "name": "cooku-commerce",
