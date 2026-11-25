@@ -30,6 +30,17 @@ y no guarda claves: solo declara la URL del servidor y la skill.
 | `cash_closes` | Cierres diarios (Z): ventas, impuestos, propinas, efectivo esperado y contado |
 | `reservation_occupancy` | Reservas y cubiertos por día y ocupación estimada (requiere reservas) |
 
+## Instalar
+
+En Claude Code:
+
+```
+/plugin install cooku-restaurants --marketplace VGM137/cooku-claude-plugins
+```
+
+En Claude (web, escritorio y Cowork), búscalo en el directorio o añade este
+repositorio como marketplace en **Customize › Plugins**.
+
 ## Conectar
 
 1. Instala el plugin y pulsa **Connect** (Claude) o `/mcp` → **Authenticate**

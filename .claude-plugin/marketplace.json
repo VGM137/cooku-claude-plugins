@@ -6,11 +6,10 @@
     "name": "Cooku",
     "email": "hola@usecooku.com"
   },
-  "privacyPolicyUrl": "https://usecooku.com/pa/politica-de-privacidad",
   "plugins": [
     {
       "name": "cooku-commerce",
-      "description": "Busca restaurantes de Cooku, mira su menú, cotiza y haz pedidos o reserva mesa desde Claude.",
+      "description": "Busca restaurantes de Cooku, mira su menú, cotiza y pide para recoger, a domicilio o a tu mesa, o reserva mesa desde Claude.",
       "category": "productivity",
       "source": "./plugins/cooku-commerce"
     },

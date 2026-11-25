@@ -37,6 +37,17 @@ escanearlo) y, si el lugar lo exige, el PIN de 6 dígitos que tiene el local.
 Antes de pedir confirma contigo el lugar junto con el total. Ni el código ni el
 PIN salen de Cooku.
 
+## Instalar
+
+En Claude Code:
+
+```
+/plugin install cooku-commerce --marketplace VGM137/cooku-claude-plugins
+```
+
+En Claude (web, escritorio y Cowork), búscalo en el directorio o añade este
+repositorio como marketplace en **Customize › Plugins**.
+
 ## Conectar
 
 1. Instala el plugin y pulsa **Connect** (Claude) o `/mcp` → **Authenticate**
